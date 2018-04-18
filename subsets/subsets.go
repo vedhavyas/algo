@@ -31,11 +31,10 @@ func backtrack(a []string, s []bool, k, n int) {
 	}
 
 	c := []bool{true, false}
-	i := k
-	k += 1
 	for _, v := range c {
-		s[i] = v
-		backtrack(a, s, k, n)
+		// yes and no
+		s[k] = v
+		backtrack(a, s, k+1, n)
 	}
 }
 

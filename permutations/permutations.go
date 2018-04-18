@@ -9,8 +9,12 @@ func permutations(a []string, k, n int) {
 	}
 
 	for i := k; i < n; i++ {
+		// swap
 		a[k], a[i] = a[i], a[k]
+
 		permutations(a, k+1, n)
+
+		//un-swap
 		a[k], a[i] = a[i], a[k]
 	}
 }
